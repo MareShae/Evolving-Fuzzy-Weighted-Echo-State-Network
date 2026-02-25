@@ -31,8 +31,8 @@ ofwesn = FWESN.eFWESN(
     dim_in=1,
     dim_res=8,
     dim_out=1,
-    cauchy_r=0.1,
-    firing_th=0.01,
+    cauchy_r=0.05,
+    firing_th=0.2,
     spectral_r=0.9
 )
 

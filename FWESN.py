@@ -328,14 +328,14 @@ class eFWESN:
         
                                          1
         Cauchy, cX =  ------------------------------------
-                          1 + (2 * (X - center) / r)^2
+                          1 + ((X - center) / r)^2
         μX = ∏i cX
         """
 
         for row in self.rules.index:
             # membership from every rule
             self.rules.at[row, 'μ'] = 1 / numpy.prod(
-                1 + numpy.pow(2 * (self.x[0] - self.rules.loc[row, 'center']) / self.hyperparameters.loc[0, 'cauchy_r'], 2)
+                1 + numpy.pow((self.x[0] - self.rules.loc[row, 'center']) / self.hyperparameters.loc[0, 'cauchy_r'], 2)
             )
 
         
