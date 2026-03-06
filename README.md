@@ -15,3 +15,5 @@ This small project FWESN into an evolving model through
 [3] Gu, X., Han, J., Shen, Q. et al. Autonomous learning for fuzzy systems: a review. Artif Intell Rev 56, 7549–7595 (2023). https://doi.org/10.1007/s10462-022-10355-6
 
 [4] GeeksforGeeks. (2025, July 23). Echo State Network – an overview. GeeksforGeeks. https://www.geeksforgeeks.org/machine-learning/echo-state-network-an-overview/
+
+[5] K. S. T. R. Alves, Simpl_eTS: Simplified evolving Takagi-Sugeno, GitHub repository. https://github.com/kaikerochaalves/Simpl_eTS-Simplified-evolving-Takagi-Sugeno
