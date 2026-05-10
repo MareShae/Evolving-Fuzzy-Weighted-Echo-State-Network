@@ -1,8 +1,8 @@
 import tqdm
-import FWESN
 import numpy
 import matplotlib.pyplot
 import reservoirpy.datasets
+from efwesn import eFWESN
 
 D = 4
 delta = 6
@@ -27,7 +27,7 @@ X_train, X_test = mackey_glass[:3000], mackey_glass[5000:]
 Y_train, Y_test = mackey_glass[:3000], mackey_glass[5000:]
 
 # create the fuzzy weighted echo state network
-ofwesn = FWESN.eFWESN(
+ofwesn = eFWESN.eFWESN(
     dim_in=1,
     dim_res=8,
     dim_out=1,

@@ -10,7 +10,7 @@ The main aim of this project is targeted changes that allow for online training.
 + fuzzy c-mean → evolving membership via firing strength criteria, and
 + mean square error → recursive least squares.
 
-![naive architecture](/naive%20architecture.svg)
+![naive architecture](/assets/naive%20architecture.svg)
 
 The *evolving membership* allows the **eFWESN** to self-adapt to dynamically changing pattern in a single pass, while the *recursive least square* fine-tunes the system.
 
