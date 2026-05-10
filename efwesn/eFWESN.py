@@ -353,7 +353,7 @@ class eFWESN:
             self.rules.at[row, 'λ'] = self.rules.loc[row, 'μ'] / total_u
 
 
-    def reserviour_state_reset(self):
+    def flush(self):
         """
         resets reserviour states to zero
         resets reserviour washout to > 1

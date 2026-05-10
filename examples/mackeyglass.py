@@ -2,7 +2,7 @@ import tqdm
 import numpy
 import matplotlib.pyplot
 import reservoirpy.datasets
-from efwesn import eFWESN
+from efwesn.eFWESN import eFWESN
 
 D = 4
 delta = 6
@@ -27,7 +27,7 @@ X_train, X_test = mackey_glass[:3000], mackey_glass[5000:]
 Y_train, Y_test = mackey_glass[:3000], mackey_glass[5000:]
 
 # create the fuzzy weighted echo state network
-ofwesn = eFWESN.eFWESN(
+ofwesn = eFWESN(
     dim_in=1,
     dim_res=8,
     dim_out=1,
@@ -47,7 +47,7 @@ for i in tqdm.tqdm(range(X_train.shape[0])):
 print(f"Trained with {ofwesn.rules.shape[0]} rule(s)")
 
 # reset state for testing
-ofwesn.reserviour_state_reset()
+ofwesn.flush()
 
 # test the fitted model
 test_output = numpy.zeros(shape=X_test.shape)
