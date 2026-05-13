@@ -7,19 +7,22 @@ The original Fuzzy Weighted Echo State Network (FWESN) proposed by [Yao Zhao and
 
 
 ## eFWESN
-The FWESN utilizes the fuzzy c-mean clustering method that produces a static representation of the training batch, and a mean square error that calculates the output weight, W_{out}, once. While efficient due to the generalization and stability of batch processing, it is unable to adapt to new information and requires retraining the entire system from scratch.
+The FWESN utilizes the fuzzy c-mean clustering method that produces a static representation of the training batch, and a mean square error that calculates the output weight, $W_{out}$, once. While efficient due to the generalization and stability of batch processing, it is unable to adapt to new information and requires retraining the entire system from scratch.
 
 The main aim of this project is targeted changes that allow for online training. It does this by modifying two elements of the proposed FWESN including:
 + fuzzy c-mean → evolving membership via firing strength criteria, and
 + mean square error → recursive least squares.
 
 Evolution of the rules of the fuzzy system occurs after the Cauchy membership, which is
-Cauchy, C(X) = $\frac{1}{1 + (2  \frac{{x}_{input} - {x}_{center}}{{r}_{cauchy}})^2}$
-When the max membership of ${x}_{input}$ for all rules is less that a predefined threshold, ∀, a new rule is created that uses ${x}_{input}$ as the center of its rule, ${x}_{center}$.
+Cauchy, C(X) = $`\frac{1}{1 + (2  \frac{{x}_{input} - {x}_{center}}{{r}_{cauchy}})^2}`$
+When the max membership of $`{x}_{input}`$ for all rules is less that a predefined threshold, ∀, a new rule is created that uses $`{x}_{input}`$ as the center of its rule, $`{x}_{center}`$.
 
 To update the output weight, for the normalized Cauchy $\lambda$, reservior states $\Gamma$, the recursive least square is utilized as
+
 Covariance, $\rho(t+1) = \rho(t) - \frac{\lambda(t) * \rho(t)  @ \Gamma(t) @ \Gamma(t).T @ \rho(t)}{1 + \lambda(t)  * \Gamma(t).T @ \rho(t) @ \Gamma(t)}$
-Output weight, ${\omega(t+1)}_{output} = {\omega(t)}_{output} + (\rho @ \Gamma * \lambda)({y}_{true} - \Gamma @ {\omega(t)}_{output})$
+
+Output weight, $`{\omega(t+1)}_{output} = {\omega(t)}_{output} + (\rho @ \Gamma * \lambda)({y}_{true} - \Gamma @ {\omega(t)}_{output})`$
+
 from [K. S. T. R. Alves'](https://github.com/kaikerochaalves/Simpl_eTS-Simplified-evolving-Takagi-Sugeno) implementation of the Simpl_eTS: Simplified evolving Takagi-Sugeno.
 
 The *evolving membership* allows the **eFWESN** to self-adapt to dynamically changing pattern in a single pass, while the *recursive least square* fine-tunes the system.
