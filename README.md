@@ -14,7 +14,9 @@ The main aim of this project is targeted changes that allow for online training.
 + mean square error → recursive least squares.
 
 Evolution of the rules of the fuzzy system occurs after the Cauchy membership, which is
+
 Cauchy, C(X) = $`\frac{1}{1 + (2  \frac{{x}_{input} - {x}_{center}}{{r}_{cauchy}})^2}`$
+
 When the max membership of $`{x}_{input}`$ for all rules is less that a predefined threshold, ∀, a new rule is created that uses $`{x}_{input}`$ as the center of its rule, $`{x}_{center}`$.
 
 To update the output weight, for the normalized Cauchy $\lambda$, reservior states $\Gamma$, the recursive least square is utilized as
